@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80570CC2938ABAE006E21C7 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80570CA2938ABAE006E21C7 /* NotesTableViewCell.swift */; };
+		E80570CD2938ABAE006E21C7 /* NotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E80570CB2938ABAE006E21C7 /* NotesTableViewCell.xib */; };
+		E80570D02938B016006E21C7 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80570CF2938B016006E21C7 /* NotesViewController.swift */; };
+		E80570D42938B0E3006E21C7 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80570D32938B0E3006E21C7 /* AddNoteView.swift */; };
+		E80570D62938B128006E21C7 /* AddNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E80570D52938B128006E21C7 /* AddNoteView.xib */; };
+		E80570D92938DE38006E21C7 /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80570D82938DE38006E21C7 /* UIView + Ext.swift */; };
 		E88DFA7E292CD72C00E2E530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88DFA7D292CD72C00E2E530 /* AppDelegate.swift */; };
 		E88DFA80292CD72C00E2E530 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88DFA7F292CD72C00E2E530 /* SceneDelegate.swift */; };
 		E88DFA82292CD72C00E2E530 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88DFA81292CD72C00E2E530 /* EpisodesViewController.swift */; };
@@ -30,10 +36,18 @@
 		E8A40474292E1FA600561927 /* EpisodesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A40472292E1FA600561927 /* EpisodesTableViewCell.xib */; };
 		E8A40478292E47B800561927 /* EpisodeDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A40477292E47B800561927 /* EpisodeDetailView.xib */; };
 		E8A4047A292E47E200561927 /* EpisodeDetailVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A40479292E47E200561927 /* EpisodeDetailVew.swift */; };
+		E8FCA9B229361521000849D5 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FCA9B129361521000849D5 /* PersistanceManager.swift */; };
+		E8FCA9B52936155C000849D5 /* BreakingBadAppCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8FCA9B32936155C000849D5 /* BreakingBadAppCoreData.xcdatamodeld */; };
 		E8FCD0D6292E6F1C00519481 /* NameControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FCD0D5292E6F1C00519481 /* NameControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E80570CA2938ABAE006E21C7 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
+		E80570CB2938ABAE006E21C7 /* NotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableViewCell.xib; sourceTree = "<group>"; };
+		E80570CF2938B016006E21C7 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		E80570D32938B0E3006E21C7 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		E80570D52938B128006E21C7 /* AddNoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteView.xib; sourceTree = "<group>"; };
+		E80570D82938DE38006E21C7 /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		E88DFA7A292CD72C00E2E530 /* BreakingBadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E88DFA7D292CD72C00E2E530 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E88DFA7F292CD72C00E2E530 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +73,8 @@
 		E8A40472292E1FA600561927 /* EpisodesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesTableViewCell.xib; sourceTree = "<group>"; };
 		E8A40477292E47B800561927 /* EpisodeDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeDetailView.xib; sourceTree = "<group>"; };
 		E8A40479292E47E200561927 /* EpisodeDetailVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailVew.swift; sourceTree = "<group>"; };
+		E8FCA9B129361521000849D5 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		E8FCA9B42936155C000849D5 /* BreakingBadAppCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BreakingBadAppCoreData.xcdatamodel; sourceTree = "<group>"; };
 		E8FCD0D5292E6F1C00519481 /* NameControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +89,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E80570C92938AA95006E21C7 /* NotesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E80570CA2938ABAE006E21C7 /* NotesTableViewCell.swift */,
+				E80570CB2938ABAE006E21C7 /* NotesTableViewCell.xib */,
+			);
+			path = NotesTableViewCell;
+			sourceTree = "<group>";
+		};
+		E80570D12938B01A006E21C7 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				E80570CF2938B016006E21C7 /* NotesViewController.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		E80570D22938B0BA006E21C7 /* AddNoteView */ = {
+			isa = PBXGroup;
+			children = (
+				E80570D32938B0E3006E21C7 /* AddNoteView.swift */,
+				E80570D52938B128006E21C7 /* AddNoteView.xib */,
+			);
+			path = AddNoteView;
+			sourceTree = "<group>";
+		};
 		E88DFA71292CD72C00E2E530 = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +135,13 @@
 			isa = PBXGroup;
 			children = (
 				E88DFAB0292D100700E2E530 /* Helpers */,
-				E88DFAAA292D00AE00E2E530 /* Service */,
+				E88DFAAA292D00AE00E2E530 /* Managers */,
 				E88DFAAD292D03C800E2E530 /* Model */,
 				E88DFAA3292CDD3400E2E530 /* View */,
 				E88DFA9A292CDB0300E2E530 /* Contollers */,
 				E88DFAB1292D103800E2E530 /* Support */,
 				E88DFA8B292CD72D00E2E530 /* Info.plist */,
+				E8FCA9B32936155C000849D5 /* BreakingBadAppCoreData.xcdatamodeld */,
 			);
 			path = BreakingBadApp;
 			sourceTree = "<group>";
@@ -106,6 +149,7 @@
 		E88DFA9A292CDB0300E2E530 /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
+				E80570D12938B01A006E21C7 /* Notes */,
 				E88DFA9B292CDB1700E2E530 /* Characters */,
 				E88DFA9D292CDB4300E2E530 /* Episodes */,
 				E88DFAA0292CDB6900E2E530 /* IMDB */,
@@ -142,6 +186,8 @@
 		E88DFAA3292CDD3400E2E530 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E80570D22938B0BA006E21C7 /* AddNoteView */,
+				E80570C92938AA95006E21C7 /* NotesTableViewCell */,
 				E8A40476292E473800561927 /* EpisodeDetailView */,
 				E8A4046E292E1F6E00561927 /* EpisodesTableViewCell */,
 				E8A4046A292E159300561927 /* CharacterCollectionCell */,
@@ -151,12 +197,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		E88DFAAA292D00AE00E2E530 /* Service */ = {
+		E88DFAAA292D00AE00E2E530 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				E88DFAAB292D00C200E2E530 /* NetworkManager.swift */,
+				E8FCA9B129361521000849D5 /* PersistanceManager.swift */,
 			);
-			path = Service;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		E88DFAAD292D03C800E2E530 /* Model */ = {
@@ -174,6 +221,7 @@
 			children = (
 				E88DFAB2292D110D00E2E530 /* UIViewController + Ext.swift */,
 				E8FCD0D5292E6F1C00519481 /* NameControl.swift */,
+				E80570D82938DE38006E21C7 /* UIView + Ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -286,9 +334,11 @@
 				E88DFA8A292CD72D00E2E530 /* LaunchScreen.storyboard in Resources */,
 				E8A40474292E1FA600561927 /* EpisodesTableViewCell.xib in Resources */,
 				E8A40478292E47B800561927 /* EpisodeDetailView.xib in Resources */,
+				E80570CD2938ABAE006E21C7 /* NotesTableViewCell.xib in Resources */,
 				E88DFAA9292CDD8800E2E530 /* CharacterCollectionCell.xib in Resources */,
 				E88DFA87292CD72D00E2E530 /* Assets.xcassets in Resources */,
 				E88DFAB8292D480600E2E530 /* QuotesTableViewCell.xib in Resources */,
+				E80570D62938B128006E21C7 /* AddNoteView.xib in Resources */,
 				E88DFA85292CD72C00E2E530 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,17 +353,23 @@
 				E88DFAAC292D00C200E2E530 /* NetworkManager.swift in Sources */,
 				E88DFAAF292D040100E2E530 /* CharacterModel.swift in Sources */,
 				E88DFA95292CDAA700E2E530 /* CharacterListViewController.swift in Sources */,
+				E8FCA9B229361521000849D5 /* PersistanceManager.swift in Sources */,
 				E88DFAA8292CDD8800E2E530 /* CharacterCollectionCell.swift in Sources */,
 				E88DFA82292CD72C00E2E530 /* EpisodesViewController.swift in Sources */,
 				E88DFA97292CDAD500E2E530 /* CharacterDetailsViewController.swift in Sources */,
+				E80570CC2938ABAE006E21C7 /* NotesTableViewCell.swift in Sources */,
 				E88DFA7E292CD72C00E2E530 /* AppDelegate.swift in Sources */,
 				E8A40473292E1FA600561927 /* EpisodesTableViewCell.swift in Sources */,
+				E80570D42938B0E3006E21C7 /* AddNoteView.swift in Sources */,
 				E88DFA80292CD72C00E2E530 /* SceneDelegate.swift in Sources */,
 				E88DFAB7292D480600E2E530 /* QuotesTableViewCell.swift in Sources */,
 				E88DFAA2292CDB7A00E2E530 /* IMDBViewController.swift in Sources */,
 				E8FCD0D6292E6F1C00519481 /* NameControl.swift in Sources */,
+				E8FCA9B52936155C000849D5 /* BreakingBadAppCoreData.xcdatamodeld in Sources */,
 				E8A40469292E0C6400561927 /* QuoteModel.swift in Sources */,
 				E8A4046D292E1CA900561927 /* EpisodeModel.swift in Sources */,
+				E80570D92938DE38006E21C7 /* UIView + Ext.swift in Sources */,
+				E80570D02938B016006E21C7 /* NotesViewController.swift in Sources */,
 				E88DFAB3292D110D00E2E530 /* UIViewController + Ext.swift in Sources */,
 				E88DFA99292CDAF800E2E530 /* CharacterQuotesViewController.swift in Sources */,
 				E8A4047A292E47E200561927 /* EpisodeDetailVew.swift in Sources */,
@@ -534,6 +590,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E8FCA9B32936155C000849D5 /* BreakingBadAppCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E8FCA9B42936155C000849D5 /* BreakingBadAppCoreData.xcdatamodel */,
+			);
+			currentVersion = E8FCA9B42936155C000849D5 /* BreakingBadAppCoreData.xcdatamodel */;
+			path = BreakingBadAppCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E88DFA72292CD72C00E2E530 /* Project object */;
 }

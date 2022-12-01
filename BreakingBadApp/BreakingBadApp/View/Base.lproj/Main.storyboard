@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="YRI-NT-lkA">
-                                    <rect key="frame" x="0.0" y="-52" width="393" height="614"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="614"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
                                 <cells/>
@@ -355,6 +355,7 @@
                         <segue destination="46C-EE-6bz" kind="relationship" relationship="viewControllers" id="EU8-gp-qKc"/>
                         <segue destination="hh2-g8-sfV" kind="relationship" relationship="viewControllers" id="Fyu-Sd-4HD"/>
                         <segue destination="xQQ-r1-n73" kind="relationship" relationship="viewControllers" id="Vgx-yV-yQm"/>
+                        <segue destination="9AY-Mi-oxF" kind="relationship" relationship="viewControllers" id="wId-wn-dbB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C65-JB-Wvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -424,16 +425,97 @@
             </objects>
             <point key="canvasLocation" x="1038.9312977099237" y="707.74647887323943"/>
         </scene>
+        <!--Notes View Controller-->
+        <scene sceneID="W6f-5D-z3p">
+            <objects>
+                <viewController id="Pg2-HC-6tX" customClass="NotesViewController" customModule="BreakingBadApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WsJ-Se-pNk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PQn-gN-cnc">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iod-OI-3hR">
+                                <rect key="frame" x="323" y="699" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="WlL-U0-fDm"/>
+                                    <constraint firstAttribute="height" constant="50" id="djZ-sY-j9x"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="24" weight="semibold"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGrayColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addNoteButtonClicked:" destination="Pg2-HC-6tX" eventType="touchUpInside" id="6jh-D8-ojH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HLA-wN-32a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PQn-gN-cnc" firstAttribute="leading" secondItem="HLA-wN-32a" secondAttribute="leading" id="3ip-Ii-Fqc"/>
+                            <constraint firstItem="HLA-wN-32a" firstAttribute="trailing" secondItem="PQn-gN-cnc" secondAttribute="trailing" id="AXg-qh-2el"/>
+                            <constraint firstItem="HLA-wN-32a" firstAttribute="bottom" secondItem="Iod-OI-3hR" secondAttribute="bottom" constant="20" id="Cb4-Cy-n95"/>
+                            <constraint firstItem="HLA-wN-32a" firstAttribute="bottom" secondItem="PQn-gN-cnc" secondAttribute="bottom" id="HzF-WR-ic7"/>
+                            <constraint firstItem="HLA-wN-32a" firstAttribute="trailing" secondItem="Iod-OI-3hR" secondAttribute="trailing" constant="20" id="Xd7-4s-JLx"/>
+                            <constraint firstItem="PQn-gN-cnc" firstAttribute="top" secondItem="HLA-wN-32a" secondAttribute="top" id="nyb-nE-0cT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9X5-Ib-c2N"/>
+                    <connections>
+                        <outlet property="addNoteButton" destination="Iod-OI-3hR" id="wgm-DO-84t"/>
+                        <outlet property="notesTableView" destination="PQn-gN-cnc" id="5U1-YU-X9A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EeJ-aV-veZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1965.6488549618321" y="1401.4084507042255"/>
+        </scene>
+        <!--Notes-->
+        <scene sceneID="aAA-pA-Hdn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9AY-Mi-oxF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Notes" image="note.text" catalog="system" id="CjF-kg-3Zo">
+                        <imageReference key="selectedImage" image="note.text" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mxe-Tk-awl">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pg2-HC-6tX" kind="relationship" relationship="rootViewController" id="IaF-pB-LEN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UcC-FF-HSO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038.9312977099237" y="1401.4084507042255"/>
+        </scene>
     </scenes>
     <resources>
         <image name="folder" catalog="system" width="128" height="96"/>
         <image name="mail.and.text.magnifyingglass" catalog="system" width="128" height="102"/>
+        <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -127,6 +127,37 @@ class NetworkManager {
             }
         }
     }
+    
+    class func getSeasonedEpisodes(completion: @escaping ([[EpisodeModel]]?, Error?) -> Void) {
+        var seasonEpisodes = [[EpisodeModel]]()
+        
+        getEpisodes { episodes, error in
+            if let episodes = episodes {
+                createSeasonedEpisodes(episodes: episodes)
+                completion(seasonEpisodes, nil)
+            } else {
+                if let error = error {
+                    completion(nil, error)
+                }
+            }
+        }
+        
+        func createSeasonedEpisodes(episodes: [EpisodeModel]) {
+            var seasonSet = Set<String>()
+            var season = 1
+            episodes.forEach{ seasonSet.insert($0.season.trimmingCharacters(in: .whitespacesAndNewlines)) }
+            seasonEpisodes = [[EpisodeModel]](repeating: [EpisodeModel](), count: seasonSet.count)
+            
+            seasonSet.forEach{ _ in
+                episodes.forEach{ episode in
+                    if episode.season.trimmingCharacters(in: .whitespacesAndNewlines) == String(season){
+                        seasonEpisodes[season-1].append(episode)
+                    }
+                }
+                season += 1
+            }
+        }
+    }
 }
 
 
