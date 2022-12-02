@@ -55,8 +55,8 @@ final class PersistanceManager {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "EpisodeNotes")
         guard let episode = note.seasonEpisode, let newNote = note.note else { return }
         fetchRequest.predicate = NSPredicate(format: "seasonEpisode == %@", episode)
-        let result = try? managedContext.fetch(fetchRequest)
-        result![0].setValue(newNote, forKey: "note")
+        guard let result = try? managedContext.fetch(fetchRequest) else { return }
+        result[0].setValue(newNote, forKey: "note")
         
         do {
             try managedContext.save()

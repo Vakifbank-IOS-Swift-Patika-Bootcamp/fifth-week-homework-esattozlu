@@ -13,6 +13,7 @@
 		E80570D42938B0E3006E21C7 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80570D32938B0E3006E21C7 /* AddNoteView.swift */; };
 		E80570D62938B128006E21C7 /* AddNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E80570D52938B128006E21C7 /* AddNoteView.xib */; };
 		E80570D92938DE38006E21C7 /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80570D82938DE38006E21C7 /* UIView + Ext.swift */; };
+		E82D1CEB293A3D5100530497 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82D1CEA293A3D5100530497 /* NotesModel.swift */; };
 		E88DFA7E292CD72C00E2E530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88DFA7D292CD72C00E2E530 /* AppDelegate.swift */; };
 		E88DFA80292CD72C00E2E530 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88DFA7F292CD72C00E2E530 /* SceneDelegate.swift */; };
 		E88DFA82292CD72C00E2E530 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88DFA81292CD72C00E2E530 /* EpisodesViewController.swift */; };
@@ -48,6 +49,7 @@
 		E80570D32938B0E3006E21C7 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 		E80570D52938B128006E21C7 /* AddNoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteView.xib; sourceTree = "<group>"; };
 		E80570D82938DE38006E21C7 /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
+		E82D1CEA293A3D5100530497 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
 		E88DFA7A292CD72C00E2E530 /* BreakingBadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E88DFA7D292CD72C00E2E530 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E88DFA7F292CD72C00E2E530 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				E88DFAAE292D040100E2E530 /* CharacterModel.swift */,
 				E8A4046C292E1CA900561927 /* EpisodeModel.swift */,
 				E8A40468292E0C6400561927 /* QuoteModel.swift */,
+				E82D1CEA293A3D5100530497 /* NotesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				E88DFA95292CDAA700E2E530 /* CharacterListViewController.swift in Sources */,
 				E8FCA9B229361521000849D5 /* PersistanceManager.swift in Sources */,
 				E88DFAA8292CDD8800E2E530 /* CharacterCollectionCell.swift in Sources */,
+				E82D1CEB293A3D5100530497 /* NotesModel.swift in Sources */,
 				E88DFA82292CD72C00E2E530 /* EpisodesViewController.swift in Sources */,
 				E88DFA97292CDAD500E2E530 /* CharacterDetailsViewController.swift in Sources */,
 				E80570CC2938ABAE006E21C7 /* NotesTableViewCell.swift in Sources */,

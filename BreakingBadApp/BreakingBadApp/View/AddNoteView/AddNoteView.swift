@@ -11,6 +11,10 @@ protocol removeNoteViewDelegate: AnyObject {
     func removeSubview()
 }
 
+protocol addedEpisodeCheckerDelegate: AnyObject {
+    func addedEpisodeCheck(episode: String) -> EpisodeNotes?
+}
+
 class AddNoteView: UIView {
 
     @IBOutlet weak var containerView: UIView!
@@ -18,6 +22,7 @@ class AddNoteView: UIView {
     @IBOutlet weak var noteTextView: UITextView!
     var seasonEpisodePickerView = UIPickerView()
     weak var saveButtonDelegate: removeNoteViewDelegate?
+    weak var episodeCheckerDelegate: addedEpisodeCheckerDelegate?
     var seasonEpisodes: [[EpisodeModel]]?
     var isFromAddButton = true
     var selectedNote: EpisodeNotes?
@@ -44,15 +49,13 @@ class AddNoteView: UIView {
         hideKeyboardWhenTappedAround()
         configureComponents()
         configurePickers()
+        addDoneButtonOnKeyboard()
         seasonEpisodeTextField.delegate = self
     }
     
     func configurePickers() {
         seasonEpisodePickerView.delegate = self
         seasonEpisodePickerView.dataSource = self
-        
-        seasonEpisodePickerView.selectRow(0, inComponent: 0, animated: false)
-        seasonEpisodePickerView.selectRow(0, inComponent: 1, animated: false)
     }
     
     func configureComponents() {
@@ -104,11 +107,35 @@ class AddNoteView: UIView {
         }
     }
     
+    func episodeCheck(episode: String) -> EpisodeNotes? {
+        let foundEpisode = episodeCheckerDelegate?.addedEpisodeCheck(episode: episode)
+        return foundEpisode
+    }
+    
+    
     @IBAction func closeButtonClicked(_ sender: Any) {
         saveButtonDelegate?.removeSubview()
     }
     
-    
+    func addDoneButtonOnKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        doneToolbar.barStyle       = UIBarStyle.default
+        let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem  = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneButtonAction))
+
+        var items = [UIBarButtonItem]()
+        items.append(flexSpace)
+        items.append(done)
+
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+
+        self.noteTextView.inputAccessoryView = doneToolbar
+    }
+
+    @objc func doneButtonAction() {
+        self.noteTextView.resignFirstResponder()
+    }
 }
 
 extension AddNoteView: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -153,7 +180,22 @@ extension AddNoteView: UIPickerViewDelegate, UIPickerViewDataSource {
 extension AddNoteView: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text == "" {
+            seasonEpisodePickerView.selectRow(0, inComponent: 0, animated: false)
+            seasonEpisodePickerView.selectRow(0, inComponent: 1, animated: false)
+        }
         
         seasonEpisodeTextField.text = "Season \(seasonEpisodePickerView.selectedRow(inComponent: 0)+1), Episode: \(seasonEpisodePickerView.selectedRow(inComponent: 1)+1)"
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let foundEpisode = episodeCheck(episode: textField.text ?? "") {
+            noteTextView.text = foundEpisode.note
+            selectedNote = foundEpisode
+            isFromAddButton = false
+        } else {
+            noteTextView.text = ""
+            isFromAddButton = true
+        }
     }
 }

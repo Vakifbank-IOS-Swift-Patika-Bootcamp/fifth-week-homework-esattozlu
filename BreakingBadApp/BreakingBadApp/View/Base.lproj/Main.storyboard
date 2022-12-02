@@ -425,7 +425,7 @@
             </objects>
             <point key="canvasLocation" x="1038.9312977099237" y="707.74647887323943"/>
         </scene>
-        <!--Notes View Controller-->
+        <!--Episode Notes-->
         <scene sceneID="W6f-5D-z3p">
             <objects>
                 <viewController id="Pg2-HC-6tX" customClass="NotesViewController" customModule="BreakingBadApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -434,7 +434,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PQn-gN-cnc">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="155" width="393" height="614"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iod-OI-3hR">
@@ -470,7 +470,7 @@
                             <constraint firstItem="PQn-gN-cnc" firstAttribute="top" secondItem="HLA-wN-32a" secondAttribute="top" id="nyb-nE-0cT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9X5-Ib-c2N"/>
+                    <navigationItem key="navigationItem" title="Episode Notes" id="9X5-Ib-c2N"/>
                     <connections>
                         <outlet property="addNoteButton" destination="Iod-OI-3hR" id="wgm-DO-84t"/>
                         <outlet property="notesTableView" destination="PQn-gN-cnc" id="5U1-YU-X9A"/>
@@ -488,8 +488,8 @@
                         <imageReference key="selectedImage" image="note.text" catalog="system" symbolScale="default"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mxe-Tk-awl">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="mxe-Tk-awl">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

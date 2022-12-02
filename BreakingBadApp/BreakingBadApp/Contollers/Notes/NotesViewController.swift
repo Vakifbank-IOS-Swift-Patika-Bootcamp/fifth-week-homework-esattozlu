@@ -22,6 +22,7 @@ class NotesViewController: UIViewController {
         configureTableView()
         getSeasonedEpisodes()
         getNotesFromCoreData()
+        addNoteView.episodeCheckerDelegate = self
     }
     
     func configureTableView() {
@@ -33,6 +34,7 @@ class NotesViewController: UIViewController {
     
     func getNotesFromCoreData() {
         notes = PersistanceManager.shared.getNotes()
+        notes.sort{ $0.seasonEpisode! < $1.seasonEpisode! }
         notesTableView.reloadData()
     }
     
@@ -51,6 +53,8 @@ class NotesViewController: UIViewController {
     }
     
     @IBAction func addNoteButtonClicked(_ sender: Any) {
+        addNoteView.noteTextView.text = ""
+        addNoteView.seasonEpisodeTextField.text = ""
         addNoteView.seasonEpisodeTextField.isEnabled = true
         addNoteView.isFromAddButton = true
         addNoteViewAsSubView()
@@ -112,5 +116,17 @@ extension NotesViewController: removeNoteViewDelegate {
         UIView.animate(withDuration: 0.3, animations: {self.addNoteView.alpha = 0.0}, completion: {(value: Bool) in
             self.addNoteView.removeFromSuperview()
         })
+    }
+}
+
+extension NotesViewController: addedEpisodeCheckerDelegate {
+    func addedEpisodeCheck(episode: String) -> EpisodeNotes? {
+        var foundEpisode: EpisodeNotes?
+        notes.forEach{
+            if $0.seasonEpisode == episode {
+                foundEpisode = $0
+            }
+        }
+        return foundEpisode
     }
 }

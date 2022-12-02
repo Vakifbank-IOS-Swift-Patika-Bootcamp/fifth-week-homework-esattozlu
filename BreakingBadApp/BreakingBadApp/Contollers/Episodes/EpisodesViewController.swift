@@ -39,42 +39,6 @@ class EpisodesViewController: UIViewController {
             }
         }
     }
-    
-    // to get episodes from API
-//    func getEpisodes() {
-//        activityIndicator.startAnimating()
-//        NetworkManager.getEpisodes { [weak self] episodes, error in
-//            guard let self = self else { return }
-//            self.activityIndicator.stopAnimating()
-//            if let episodes = episodes {
-//                self.createSeasonedEpisodes(episodes: episodes)
-//            } else {
-//                if let error = error {
-//                    self.alert(title: "Alert", message: error.localizedDescription)
-//                }
-//            }
-//            DispatchQueue.main.async {
-//                self.episodesTableView.reloadData()
-//            }
-//        }
-//    }
-    
-    // Creates Seasoned Episode Array [[EpisodeModel]]
-//    func createSeasonedEpisodes(episodes: [EpisodeModel]) {
-//        var seasonSet = Set<String>()
-//        var season = 1
-//        episodes.forEach{ seasonSet.insert($0.season.trimmingCharacters(in: .whitespacesAndNewlines)) }
-//        seasonEpisodes = [[EpisodeModel]](repeating: [EpisodeModel](), count: seasonSet.count)
-//
-//        seasonSet.forEach{ _ in
-//            episodes.forEach{ episode in
-//                if episode.season.trimmingCharacters(in: .whitespacesAndNewlines) == String(season){
-//                    seasonEpisodes[season-1].append(episode)
-//                }
-//            }
-//            season += 1
-//        }
-//    }
 }
 
 extension EpisodesViewController: UITableViewDelegate, UITableViewDataSource {
