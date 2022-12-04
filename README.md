@@ -1,33 +1,45 @@
-# fifth-week-homework
 
-## 1- Breaking Bad api uygulamamıza persistant özelliği kazandıracağız.
+# Fifth-Week-Homework
 
-### Uygulamamıza Yeni bir tab ekleyeceğiz: Notlar
+## BreakingBadApp - Episode Notes
+Breaking Bad App, Breaking Bad karakterlerinin bilgilerini, repliklerini, sezon bölümlerinin bilgilerini ve bölümlerde oynayan karakterleri gösteren, dizinin IMDB sayfasının incelenebildiği ve bölümlerle ilgili notlar alınabilen bir uygulamadır.
+- Geçtiğimiz hafta yapılan projenin üzerine Episode Notes Tab'ı eklenmiştir.
 
-• Ekranda bölümlerden aldığımız notların listesi olacak.
+### Episode Notes Tab
 
-• Listeden sola kaydırarak eleman silebilmeliyiz.
+- Episode Notes Tab'da CoreData'ya eklenen notlar listelenir, yeni not eklenebilir, eklenen notlar güncellenebilir ve silinebilir.
 
-• Floating button şeklinde ekle butonumuz olacak.
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/205512153-238dd1e9-eda1-4423-a8b8-ecd02e9e7e3f.png" alt="drawing" width="275"/></td>  
+<td><img src="https://user-images.githubusercontent.com/96587699/205512162-1ef8ecbf-1390-4d3d-b0b1-7afa07a1d22b.png" alt="drawing" width="275"/></td>  
+</td>  
+</tr>
+</table>
 
-• Ekle butonuna bastığımızda ekle/düzenle ekranı present edilecek. Boş bilgiler
+- Note Tab ana ekranında CoreData'ya kayıtlı notlar sezon ve bölüm sıralamasına göre listelenir.
+- Listelenen notlar sola kaydırılarak CoreData ve TableView'den silinebilir.
+- Ana ekranda ekle butonuna tıklanarak not ekle/düzenle ekranı present edilir.
 
-• Listeden item seçtiğimizde ekle/düzenle ekranı present edilecek. Seçtiğimiz item bilgileri ile.
+</div>
+<div align="center">
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/96587699/205512164-0df1be8a-a6da-47db-b263-16edcb228ddc.png" alt="drawing" width="275
+"/></td>  
+<td><img src="https://user-images.githubusercontent.com/96587699/205512158-f8350279-e73a-45dd-b75d-5bfdd5a3e142.png" alt="drawing" width="275
+"/></td>  
+<td><img src="https://user-images.githubusercontent.com/96587699/205512160-cb05f72b-6a00-4a88-ba4e-80073e009b23.png" alt="drawing" width="275
+"/></td>  
+</tr>
+</table>
+</div>
 
-### Ekleme/Düzenleme Ekranı
-
-• Ekleme ekranında sezon, bölüm bilgisi girip notumuzu yazacağız.
-
-• Ekleme ekranındaki kaydet butonu ile CoreData üzerinde kayıt edeceğiz.
-
-• Eğer item düzenleme ile gelindiyse ilgili not update edilmelidir.
-
-
-### 2- Clean Code - 5, 6, 7, 8 chapterlar özetlenmelidir.
-
-### 3- Crack the Interviews - 1, 2, 3 Çalışılacak.
- 
-### 4- Leet Code üzerinden seçilmiş 3 soru çözülecek ve soruya ait görseller repoya eklenecek. 
-Soru çözüldükten sonra submission kısmından görseli alabilirsiniz. Örn:
-
-<img width="584" alt="image" src="https://user-images.githubusercontent.com/65663370/204152185-1f073bb2-4e0d-4466-b29f-61adcbe15a8f.png">
+- Ekle butonuna basıldığında boş bir kayıt ekranı açılır.
+- Season & Episode seçim texfield'ından 2'li pickerview ile sezon ve bölüm seçimi yapılır.
+- Seçim yapılan bölüm için daha önce kayıt girilmiş ise seçim sonrasında textview'e önceki girilen kayıt gelir. Kayıt üzerinde ekleme ve düzenleme yapılabilir.
+- Save butonu ile girilen not CoreData'ya kayıt yapılır ve listeye eklenir, close butonu ile herhangi bir aksiyon almadan ekran dismiss edilebilir.
+- Kayıt bittiğinde klavyenin üzerinde bulunan done butone ile klavye kapatılabilir.
+- Klavye veya picker açıkken ekranın farklı bir yerine dokunulduğunda klavye ve picker Gesture Recognizer ile kapatılır.
+- Listeleme ekranında tableview cell üzerine tıklandığında dolu şekilde ekle/düzenle ekranı açılır. Düzenleme için açılan ekranda bölüm değişimi yapılmaması için bölüm textfield'ı disable edilmiştir. Düzenleme yapıldıktan sonra save edilerek not güncellenmiş olur.
