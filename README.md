@@ -39,6 +39,7 @@ Breaking Bad App, Breaking Bad karakterlerinin bilgilerini, repliklerini, sezon 
 
 - Ekle butonuna basıldığında boş bir kayıt ekranı açılır.
 - Season & Episode seçim texfield'ından 2'li pickerview ile sezon ve bölüm seçimi yapılır.
+- Pickerview'de bulunan sezon ve bölüm bilgileri API'dan alınır. Yeni bir sezon, bölüm eklemesi yapılırsa yeni sezon ve bölümler otomatik eklenmiş olur.
 - Seçim yapılan bölüm için daha önce kayıt girilmiş ise seçim sonrasında textview'e önceki girilen kayıt gelir. Kayıt üzerinde ekleme ve düzenleme yapılabilir.
 - Kayıt bittiğinde klavyenin üzerinde bulunan done butone ile klavye kapatılabilir.
 - Save butonu ile girilen not CoreData'ya kayıt yapılır ve listeye eklenir, close butonu ile herhangi bir aksiyon almadan ekran dismiss edilebilir.
