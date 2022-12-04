@@ -8,10 +8,10 @@
 import UIKit
 import CoreData
 
-class NotesViewController: UIViewController {
+final class NotesViewController: UIViewController {
 
-    @IBOutlet weak var notesTableView: UITableView!
-    @IBOutlet weak var addNoteButton: UIButton!
+    @IBOutlet private weak var notesTableView: UITableView!
+    @IBOutlet private weak var addNoteButton: UIButton!
     var addNoteVC = AddNoteViewController()
     var seasonEpisodes = [[EpisodeModel]]()
     var notes = [EpisodeNotes]()
@@ -32,12 +32,14 @@ class NotesViewController: UIViewController {
         notesTableView.register(UINib(nibName: "NotesTableViewCell", bundle: nil), forCellReuseIdentifier: "NotesTableViewCell")
     }
     
+    // Gets All Notes From CoreData
     func getNotesFromCoreData() {
         notes = PersistanceManager.shared.getNotes()
         notes.sort{ $0.seasonEpisode! < $1.seasonEpisode! }
         notesTableView.reloadData()
     }
     
+    // Gets episodes as seasoned [[EpisodeModel]]
     func getSeasonedEpisodes() {
         NetworkManager.getSeasonedEpisodes { seasonedEpisodes, error in
             self.addNoteButton.isEnabled = true
@@ -53,15 +55,28 @@ class NotesViewController: UIViewController {
     }
     
     @IBAction func addNoteButtonClicked(_ sender: Any) {
+        prepareAddNoteVC()
+        presentAddNoteVC()
+    }
+    
+    // presents addNoteViewController
+    func presentAddNoteVC() {
+        addNoteVC.modalPresentationStyle  = .overFullScreen
+        addNoteVC.modalTransitionStyle    = .crossDissolve
+        self.present(addNoteVC, animated: true)
+    }
+    
+    // prepares addNoteViewController
+    func prepareAddNoteVC() {
         addNoteVC.selectedNote = nil
         addNoteVC.episodeCheckerDelegate = self
         addNoteVC.saveButtonDelegate = self
         addNoteVC.isFromAddButton = true
         addNoteVC.seasonEpisodes = self.seasonEpisodes
-        presentAddNoteVC()
     }
 }
 
+// MARK: - TableView Extentions
 extension NotesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         notes.count
@@ -94,13 +109,6 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource {
         addNoteVC.seasonEpisodes = self.seasonEpisodes
         presentAddNoteVC()
     }
-    
-    func presentAddNoteVC() {
-        addNoteVC.modalPresentationStyle  = .overFullScreen
-        addNoteVC.modalTransitionStyle    = .crossDissolve
-        self.present(addNoteVC, animated: true)
-    }
-    
 }
 
 // Remove subview with animation
@@ -111,6 +119,7 @@ extension NotesViewController: saveButtonDelegate {
     }
 }
 
+// MARK: - Checks previosly added notes on AddNoteViewController
 extension NotesViewController: addedEpisodeCheckerDelegate {
     func addedEpisodeCheck(episode: String) -> EpisodeNotes? {
         var foundEpisode: EpisodeNotes?

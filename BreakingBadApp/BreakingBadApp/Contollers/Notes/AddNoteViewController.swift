@@ -15,11 +15,11 @@ protocol addedEpisodeCheckerDelegate: AnyObject {
     func addedEpisodeCheck(episode: String) -> EpisodeNotes?
 }
 
-class AddNoteViewController: UIViewController {
+final class AddNoteViewController: UIViewController {
 
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var seasonEpisodeTextField: UITextField!
-    @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var seasonEpisodeTextField: UITextField!
+    @IBOutlet private weak var noteTextView: UITextView!
     var seasonEpisodePickerView = UIPickerView()
     weak var saveButtonDelegate: saveButtonDelegate?
     weak var episodeCheckerDelegate: addedEpisodeCheckerDelegate?
@@ -82,6 +82,7 @@ class AddNoteViewController: UIViewController {
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
+        // If user comes from add button if case becomes true, if user comes from previosly added notes on TableView, else case works.
         if isFromAddButton {
             if let seasonEpisode = seasonEpisodeTextField.text, seasonEpisode != "",
                let note = noteTextView.text, note != "" {
@@ -137,6 +138,7 @@ class AddNoteViewController: UIViewController {
     }
 }
 
+// MARK: - Pickerview Extention
 extension AddNoteViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
@@ -176,6 +178,7 @@ extension AddNoteViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
+// MARK: - TextField Extention
 extension AddNoteViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
