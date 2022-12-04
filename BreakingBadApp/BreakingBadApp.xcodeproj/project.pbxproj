@@ -10,8 +10,6 @@
 		E80570CC2938ABAE006E21C7 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80570CA2938ABAE006E21C7 /* NotesTableViewCell.swift */; };
 		E80570CD2938ABAE006E21C7 /* NotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E80570CB2938ABAE006E21C7 /* NotesTableViewCell.xib */; };
 		E80570D02938B016006E21C7 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80570CF2938B016006E21C7 /* NotesViewController.swift */; };
-		E80570D42938B0E3006E21C7 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80570D32938B0E3006E21C7 /* AddNoteView.swift */; };
-		E80570D62938B128006E21C7 /* AddNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E80570D52938B128006E21C7 /* AddNoteView.xib */; };
 		E80570D92938DE38006E21C7 /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80570D82938DE38006E21C7 /* UIView + Ext.swift */; };
 		E82D1CEB293A3D5100530497 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82D1CEA293A3D5100530497 /* NotesModel.swift */; };
 		E88DFA7E292CD72C00E2E530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88DFA7D292CD72C00E2E530 /* AppDelegate.swift */; };
@@ -37,6 +35,7 @@
 		E8A40474292E1FA600561927 /* EpisodesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A40472292E1FA600561927 /* EpisodesTableViewCell.xib */; };
 		E8A40478292E47B800561927 /* EpisodeDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A40477292E47B800561927 /* EpisodeDetailView.xib */; };
 		E8A4047A292E47E200561927 /* EpisodeDetailVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A40479292E47E200561927 /* EpisodeDetailVew.swift */; };
+		E8A64F60293C84B3005FB4E7 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A64F5F293C84B3005FB4E7 /* AddNoteViewController.swift */; };
 		E8FCA9B229361521000849D5 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FCA9B129361521000849D5 /* PersistanceManager.swift */; };
 		E8FCA9B52936155C000849D5 /* BreakingBadAppCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8FCA9B32936155C000849D5 /* BreakingBadAppCoreData.xcdatamodeld */; };
 		E8FCD0D6292E6F1C00519481 /* NameControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FCD0D5292E6F1C00519481 /* NameControl.swift */; };
@@ -46,8 +45,6 @@
 		E80570CA2938ABAE006E21C7 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		E80570CB2938ABAE006E21C7 /* NotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableViewCell.xib; sourceTree = "<group>"; };
 		E80570CF2938B016006E21C7 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
-		E80570D32938B0E3006E21C7 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
-		E80570D52938B128006E21C7 /* AddNoteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteView.xib; sourceTree = "<group>"; };
 		E80570D82938DE38006E21C7 /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		E82D1CEA293A3D5100530497 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
 		E88DFA7A292CD72C00E2E530 /* BreakingBadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +72,7 @@
 		E8A40472292E1FA600561927 /* EpisodesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesTableViewCell.xib; sourceTree = "<group>"; };
 		E8A40477292E47B800561927 /* EpisodeDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeDetailView.xib; sourceTree = "<group>"; };
 		E8A40479292E47E200561927 /* EpisodeDetailVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailVew.swift; sourceTree = "<group>"; };
+		E8A64F5F293C84B3005FB4E7 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		E8FCA9B129361521000849D5 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		E8FCA9B42936155C000849D5 /* BreakingBadAppCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BreakingBadAppCoreData.xcdatamodel; sourceTree = "<group>"; };
 		E8FCD0D5292E6F1C00519481 /* NameControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameControl.swift; sourceTree = "<group>"; };
@@ -104,17 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				E80570CF2938B016006E21C7 /* NotesViewController.swift */,
+				E8A64F5F293C84B3005FB4E7 /* AddNoteViewController.swift */,
 			);
 			path = Notes;
-			sourceTree = "<group>";
-		};
-		E80570D22938B0BA006E21C7 /* AddNoteView */ = {
-			isa = PBXGroup;
-			children = (
-				E80570D32938B0E3006E21C7 /* AddNoteView.swift */,
-				E80570D52938B128006E21C7 /* AddNoteView.xib */,
-			);
-			path = AddNoteView;
 			sourceTree = "<group>";
 		};
 		E88DFA71292CD72C00E2E530 = {
@@ -188,7 +178,6 @@
 		E88DFAA3292CDD3400E2E530 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E80570D22938B0BA006E21C7 /* AddNoteView */,
 				E80570C92938AA95006E21C7 /* NotesTableViewCell */,
 				E8A40476292E473800561927 /* EpisodeDetailView */,
 				E8A4046E292E1F6E00561927 /* EpisodesTableViewCell */,
@@ -341,7 +330,6 @@
 				E88DFAA9292CDD8800E2E530 /* CharacterCollectionCell.xib in Resources */,
 				E88DFA87292CD72D00E2E530 /* Assets.xcassets in Resources */,
 				E88DFAB8292D480600E2E530 /* QuotesTableViewCell.xib in Resources */,
-				E80570D62938B128006E21C7 /* AddNoteView.xib in Resources */,
 				E88DFA85292CD72C00E2E530 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,10 +349,10 @@
 				E82D1CEB293A3D5100530497 /* NotesModel.swift in Sources */,
 				E88DFA82292CD72C00E2E530 /* EpisodesViewController.swift in Sources */,
 				E88DFA97292CDAD500E2E530 /* CharacterDetailsViewController.swift in Sources */,
+				E8A64F60293C84B3005FB4E7 /* AddNoteViewController.swift in Sources */,
 				E80570CC2938ABAE006E21C7 /* NotesTableViewCell.swift in Sources */,
 				E88DFA7E292CD72C00E2E530 /* AppDelegate.swift in Sources */,
 				E8A40473292E1FA600561927 /* EpisodesTableViewCell.swift in Sources */,
-				E80570D42938B0E3006E21C7 /* AddNoteView.swift in Sources */,
 				E88DFA80292CD72C00E2E530 /* SceneDelegate.swift in Sources */,
 				E88DFAB7292D480600E2E530 /* QuotesTableViewCell.swift in Sources */,
 				E88DFAA2292CDB7A00E2E530 /* IMDBViewController.swift in Sources */,

@@ -480,6 +480,94 @@
             </objects>
             <point key="canvasLocation" x="1965.6488549618321" y="1401.4084507042255"/>
         </scene>
+        <!--Add Note View Controller-->
+        <scene sceneID="des-Xl-B2A">
+            <objects>
+                <viewController storyboardIdentifier="addNoteVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YxC-0r-1Hj" customClass="AddNoteViewController" customModule="BreakingBadApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WrE-ba-TDm">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gY5-53-2vE">
+                                <rect key="frame" x="48.666666666666657" y="226" width="295.66666666666674" height="400"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zmL-2m-J8l">
+                                        <rect key="frame" x="15" y="80" width="265.66666666666669" height="268"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Season and Episode" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sdt-nz-Sho">
+                                        <rect key="frame" x="15" y="20" width="265.66666666666669" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="uoX-Fj-ty5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="s80-iI-Ror">
+                                        <rect key="frame" x="8" y="356" width="280" height="34.333333333333314"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWB-Jf-lJG">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="34.333333333333336"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="pe4-aA-8YI"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Save">
+                                                    <color key="baseBackgroundColor" systemColor="systemGrayColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="saveButtonClicked:" destination="YxC-0r-1Hj" eventType="touchUpInside" id="PIk-Le-yp1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldR-Xd-nMJ">
+                                                <rect key="frame" x="160" y="0.0" width="120" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Close">
+                                                    <color key="baseBackgroundColor" systemColor="systemGrayColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="closeButtonClicked:" destination="YxC-0r-1Hj" eventType="touchUpInside" id="zlG-EK-49p"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstItem="zmL-2m-J8l" firstAttribute="top" secondItem="Sdt-nz-Sho" secondAttribute="bottom" constant="20" id="04j-qa-zJF"/>
+                                    <constraint firstItem="Sdt-nz-Sho" firstAttribute="leading" secondItem="gY5-53-2vE" secondAttribute="leading" constant="15" id="3Rf-LT-2uF"/>
+                                    <constraint firstAttribute="height" constant="400" id="L4D-gF-0Se"/>
+                                    <constraint firstAttribute="trailing" secondItem="zmL-2m-J8l" secondAttribute="trailing" constant="15" id="RpU-hA-pab"/>
+                                    <constraint firstItem="zmL-2m-J8l" firstAttribute="leading" secondItem="gY5-53-2vE" secondAttribute="leading" constant="15" id="Vhg-D4-6IJ"/>
+                                    <constraint firstItem="Sdt-nz-Sho" firstAttribute="top" secondItem="gY5-53-2vE" secondAttribute="top" constant="20" id="YYa-Ft-o2R"/>
+                                    <constraint firstItem="s80-iI-Ror" firstAttribute="centerX" secondItem="gY5-53-2vE" secondAttribute="centerX" id="Z0I-NR-t1g"/>
+                                    <constraint firstAttribute="bottom" secondItem="s80-iI-Ror" secondAttribute="bottom" constant="9.6699999999999999" id="bm0-b0-Yk5"/>
+                                    <constraint firstItem="s80-iI-Ror" firstAttribute="top" secondItem="zmL-2m-J8l" secondAttribute="bottom" constant="8" id="k9R-Sd-Uay"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sdt-nz-Sho" secondAttribute="trailing" constant="15" id="rqM-Ln-2bW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yh9-lT-ocC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gY5-53-2vE" firstAttribute="centerY" secondItem="WrE-ba-TDm" secondAttribute="centerY" id="VdO-bm-ytK"/>
+                            <constraint firstItem="gY5-53-2vE" firstAttribute="centerX" secondItem="WrE-ba-TDm" secondAttribute="centerX" id="l0i-o8-YeX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="gY5-53-2vE" id="BTY-W1-tk9"/>
+                        <outlet property="noteTextView" destination="zmL-2m-J8l" id="lGK-RT-hNz"/>
+                        <outlet property="seasonEpisodeTextField" destination="Sdt-nz-Sho" id="57o-C9-K1X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XjB-BG-UlX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2905" y="1401"/>
+        </scene>
         <!--Notes-->
         <scene sceneID="aAA-pA-Hdn">
             <objects>
@@ -508,6 +596,9 @@
         <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

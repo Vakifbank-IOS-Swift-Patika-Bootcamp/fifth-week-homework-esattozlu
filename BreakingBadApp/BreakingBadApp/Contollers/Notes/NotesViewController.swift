@@ -12,7 +12,7 @@ class NotesViewController: UIViewController {
 
     @IBOutlet weak var notesTableView: UITableView!
     @IBOutlet weak var addNoteButton: UIButton!
-    var addNoteView = AddNoteView()
+    var addNoteVC = AddNoteViewController()
     var seasonEpisodes = [[EpisodeModel]]()
     var notes = [EpisodeNotes]()
     
@@ -22,7 +22,7 @@ class NotesViewController: UIViewController {
         configureTableView()
         getSeasonedEpisodes()
         getNotesFromCoreData()
-        addNoteView.episodeCheckerDelegate = self
+        addNoteVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addNoteVC") as! AddNoteViewController
     }
     
     func configureTableView() {
@@ -53,11 +53,12 @@ class NotesViewController: UIViewController {
     }
     
     @IBAction func addNoteButtonClicked(_ sender: Any) {
-        addNoteView.noteTextView.text = ""
-        addNoteView.seasonEpisodeTextField.text = ""
-        addNoteView.seasonEpisodeTextField.isEnabled = true
-        addNoteView.isFromAddButton = true
-        addNoteViewAsSubView()
+        addNoteVC.selectedNote = nil
+        addNoteVC.episodeCheckerDelegate = self
+        addNoteVC.saveButtonDelegate = self
+        addNoteVC.isFromAddButton = true
+        addNoteVC.seasonEpisodes = self.seasonEpisodes
+        presentAddNoteVC()
     }
 }
 
@@ -86,36 +87,27 @@ extension NotesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        addNoteView.seasonEpisodeTextField.text = notes[indexPath.row].seasonEpisode
-        addNoteView.noteTextView.text = notes[indexPath.row].note
-        addNoteView.seasonEpisodeTextField.isEnabled = false
-        addNoteView.isFromAddButton = false
-        addNoteView.selectedNote = notes[indexPath.row]
-        addNoteViewAsSubView()
+        addNoteVC.episodeCheckerDelegate = self
+        addNoteVC.saveButtonDelegate = self
+        addNoteVC.isFromAddButton = false
+        addNoteVC.selectedNote = notes[indexPath.row]
+        addNoteVC.seasonEpisodes = self.seasonEpisodes
+        presentAddNoteVC()
     }
     
-    
-    
-    func addNoteViewAsSubView() {
-        addNoteView.seasonEpisodes = self.seasonEpisodes
-        addNoteView.frame = view.bounds
-        addNoteView.saveButtonDelegate = self
-        addNoteView.alpha = 0
-        UIView.animate(withDuration: 0.3) {
-            self.addNoteView.alpha = 1
-        }
-        view.addSubview(addNoteView)
+    func presentAddNoteVC() {
+        addNoteVC.modalPresentationStyle  = .overFullScreen
+        addNoteVC.modalTransitionStyle    = .crossDissolve
+        self.present(addNoteVC, animated: true)
     }
+    
 }
 
 // Remove subview with animation
-extension NotesViewController: removeNoteViewDelegate {
-    func removeSubview() {
+extension NotesViewController: saveButtonDelegate {
+    func noteSaved() {
         print("delegate works")
         getNotesFromCoreData()
-        UIView.animate(withDuration: 0.3, animations: {self.addNoteView.alpha = 0.0}, completion: {(value: Bool) in
-            self.addNoteView.removeFromSuperview()
-        })
     }
 }
 

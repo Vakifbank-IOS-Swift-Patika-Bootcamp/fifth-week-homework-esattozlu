@@ -1,56 +1,51 @@
 //
-//  AddNoteView.swift
+//  AddNoteViewController.swift
 //  BreakingBadApp
 //
-//  Created by Hasan Esat Tozlu on 1.12.2022.
+//  Created by Hasan Esat Tozlu on 4.12.2022.
 //
 
 import UIKit
 
-protocol removeNoteViewDelegate: AnyObject {
-    func removeSubview()
+protocol saveButtonDelegate: AnyObject {
+    func noteSaved()
 }
 
 protocol addedEpisodeCheckerDelegate: AnyObject {
     func addedEpisodeCheck(episode: String) -> EpisodeNotes?
 }
 
-class AddNoteView: UIView {
+class AddNoteViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var seasonEpisodeTextField: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
     var seasonEpisodePickerView = UIPickerView()
-    weak var saveButtonDelegate: removeNoteViewDelegate?
+    weak var saveButtonDelegate: saveButtonDelegate?
     weak var episodeCheckerDelegate: addedEpisodeCheckerDelegate?
     var seasonEpisodes: [[EpisodeModel]]?
     var isFromAddButton = true
     var selectedNote: EpisodeNotes?
+    var noteFromCoreData: EpisodeNotes?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        customInit()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    private func customInit() {
-        let nib = UINib(nibName: "AddNoteView", bundle: nil)
-        if let view = nib.instantiate(withOwner: self).first as? UIView {
-            addSubview(view)
-            view.frame = self.bounds
-            view.backgroundColor = .black
-            view.backgroundColor = UIColor(white: 0, alpha: 0.7)
-        }
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         configureComponents()
         configurePickers()
         addDoneButtonOnKeyboard()
         seasonEpisodeTextField.delegate = self
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        seasonEpisodeTextField.text = ""
+        noteTextView.text = ""
+        seasonEpisodeTextField.isEnabled = true
+        if let selectedNote = selectedNote {
+            seasonEpisodeTextField.text = selectedNote.seasonEpisode
+            noteTextView.text = selectedNote.note
+            seasonEpisodeTextField.isEnabled = false
+        }
     }
     
     func configurePickers() {
@@ -82,6 +77,8 @@ class AddNoteView: UIView {
         
         seasonEpisodeTextField.inputView = seasonEpisodePickerView
         seasonEpisodeTextField.tintColor = .clear
+        
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
@@ -89,7 +86,8 @@ class AddNoteView: UIView {
             if let seasonEpisode = seasonEpisodeTextField.text, seasonEpisode != "",
                let note = noteTextView.text, note != "" {
                 PersistanceManager.shared.saveNote(seasonEpisode: seasonEpisode, note: note)
-                saveButtonDelegate?.removeSubview()
+                saveButtonDelegate?.noteSaved()
+                dismiss(animated: true)
             } else {
                 alert(title: "Alert", message: "Please select an episode and enter a note.")
             }
@@ -100,7 +98,8 @@ class AddNoteView: UIView {
                 selectedNote.note = note
                 selectedNote.seasonEpisode = seasonEpisode
                 PersistanceManager.shared.updateNote(note: selectedNote)
-                saveButtonDelegate?.removeSubview()
+                saveButtonDelegate?.noteSaved()
+                dismiss(animated: true)
             } else {
                 alert(title: "Alert", message: "Please select an episode and enter a note.")
             }
@@ -114,7 +113,7 @@ class AddNoteView: UIView {
     
     
     @IBAction func closeButtonClicked(_ sender: Any) {
-        saveButtonDelegate?.removeSubview()
+        dismiss(animated: true)
     }
     
     func addDoneButtonOnKeyboard() {
@@ -138,7 +137,7 @@ class AddNoteView: UIView {
     }
 }
 
-extension AddNoteView: UIPickerViewDelegate, UIPickerViewDataSource {
+extension AddNoteViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
@@ -177,7 +176,7 @@ extension AddNoteView: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-extension AddNoteView: UITextFieldDelegate {
+extension AddNoteViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.text == "" {
@@ -199,3 +198,4 @@ extension AddNoteView: UITextFieldDelegate {
         }
     }
 }
+
