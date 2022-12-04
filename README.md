@@ -21,7 +21,8 @@ Breaking Bad App, Breaking Bad karakterlerinin bilgilerini, repliklerini, sezon 
 
 - Note Tab ana ekranında CoreData'ya kayıtlı notlar sezon ve bölüm sıralamasına göre listelenir.
 - Listelenen notlar sola kaydırılarak CoreData ve TableView'den silinebilir.
-- Ana ekranda ekle butonuna tıklanarak not ekle/düzenle ekranı present edilir.
+- Ana ekranda ekle butonuna tıklanarak boş şekilde not ekle/düzenle ekranı present edilir.
+- Tableview'de listelenen kayıtların üzerine tıklandığında ekle/düzenle ekranı dolu şekilde present edilir.
 
 <div align="center">
 <table>
@@ -39,7 +40,7 @@ Breaking Bad App, Breaking Bad karakterlerinin bilgilerini, repliklerini, sezon 
 - Ekle butonuna basıldığında boş bir kayıt ekranı açılır.
 - Season & Episode seçim texfield'ından 2'li pickerview ile sezon ve bölüm seçimi yapılır.
 - Seçim yapılan bölüm için daha önce kayıt girilmiş ise seçim sonrasında textview'e önceki girilen kayıt gelir. Kayıt üzerinde ekleme ve düzenleme yapılabilir.
-- Save butonu ile girilen not CoreData'ya kayıt yapılır ve listeye eklenir, close butonu ile herhangi bir aksiyon almadan ekran dismiss edilebilir.
 - Kayıt bittiğinde klavyenin üzerinde bulunan done butone ile klavye kapatılabilir.
+- Save butonu ile girilen not CoreData'ya kayıt yapılır ve listeye eklenir, close butonu ile herhangi bir aksiyon almadan ekran dismiss edilebilir.
 - Klavye veya picker açıkken ekranın farklı bir yerine dokunulduğunda klavye ve picker Gesture Recognizer ile kapatılır.
 - Listeleme ekranında tableview cell üzerine tıklandığında dolu şekilde ekle/düzenle ekranı açılır. Düzenleme için açılan ekranda bölüm değişimi yapılmaması için bölüm textfield'ı disable edilmiştir. Düzenleme yapıldıktan sonra save edilerek not güncellenmiş olur.
