@@ -17,12 +17,12 @@ Breaking Bad App, Breaking Bad karakterlerinin bilgilerini, repliklerini, sezon 
 </td>  
 </tr>
 </table>
+</div>
 
 - Note Tab ana ekranında CoreData'ya kayıtlı notlar sezon ve bölüm sıralamasına göre listelenir.
 - Listelenen notlar sola kaydırılarak CoreData ve TableView'den silinebilir.
 - Ana ekranda ekle butonuna tıklanarak not ekle/düzenle ekranı present edilir.
 
-</div>
 <div align="center">
 <table>
 <tr>
